@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Links - ingr.in</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0f0f1a;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .container h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #00d2ff, #7a5cff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .container p {
+      color: #8888aa;
+      margin-bottom: 2.5rem;
+      font-size: 1.1rem;
+    }
+
+    #social {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.9rem 1.8rem;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(10px);
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #eee;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      min-width: 140px;
+      justify-content: center;
+    }
+
+    .social-link:hover {
+      transform: translateY(-3px) scale(1.04);
+      border-color: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Platform-specific hover colors */
+    .social-link.platform-youtube:hover {
+      background: rgba(255, 0, 0, 0.2);
+      border-color: #ff0000;
+      box-shadow: 0 8px 30px rgba(255, 0, 0, 0.2);
+    }
+    .social-link.platform-instagram:hover {
+      background: rgba(225, 48, 108, 0.2);
+      border-color: #e1306c;
+      box-shadow: 0 8px 30px rgba(225, 48, 108, 0.2);
+    }
+    .social-link.platform-facebook:hover {
+      background: rgba(24, 119, 242, 0.2);
+      border-color: #1877f2;
+      box-shadow: 0 8px 30px rgba(24, 119, 242, 0.2);
+    }
+    .social-link.platform-twitter:hover {
+      background: rgba(29, 161, 242, 0.2);
+      border-color: #1da1f2;
+      box-shadow: 0 8px 30px rgba(29, 161, 242, 0.2);
+    }
+    .social-link.platform-linkedin:hover {
+      background: rgba(10, 102, 194, 0.2);
+      border-color: #0a66c2;
+      box-shadow: 0 8px 30px rgba(10, 102, 194, 0.2);
+    }
+    .social-link.platform-github:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: #fff;
+      box-shadow: 0 8px 30px rgba(255, 255, 255, 0.1);
+    }
+
+    .footer {
+      margin-top: 3rem;
+      color: #555577;
+      font-size: 0.85rem;
+    }
+
+    .footer a {
+      color: #7a5cff;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Loading state */
+    #social:empty::after {
+      content: 'Loading social links...';
+      color: #555577;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🌐 ingr.in</h1>
+    <p>Connect with us on social media</p>
+
+    <!-- Social links will be injected here -->
+    <div id="social"></div>
+
+    <div class="footer">
+      <a href="https://ingr.in">ingr.in</a> &bull; <span>2025 ♪ <span id="year"></span></span>
+    </div>
+  </div>
+
+  <!-- Include the API script -->
+  <script src="api.js"></script>
+
+  <script>
+    // Dynamic footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
